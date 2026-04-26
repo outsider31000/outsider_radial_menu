@@ -6,6 +6,8 @@ Anyone can contribute, you can assign commands or event names to be triggered so
 
 Config and add animations easily you can also style the radial wheel.
 
+![Emote](https://cdn.discordapp.com/attachments/717693682995691521/928780425957081118/emotesm.png?ex=69ee94ad&is=69ed432d&hm=6ca65bde2cffa7af18f6f38daada05b7247067861d3e2ef88e9aa76bf8fca1ea&)
+![Image](https://cdn.discordapp.com/attachments/717693682995691521/928780426389119006/new1.png?ex=69ee94ad&is=69ed432d&hm=ae9adc56434368dbe82206ee88729abdce7dbbf4402bbadce2a8f445e178ae80&)
 ## INSTALATION
 
 - add `ensure outsider_radial_menu` to server.cfg
