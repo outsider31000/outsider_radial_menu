@@ -133,6 +133,37 @@ if CONFIG.EMOTES then
     end)
 end
 
+if CONFIG.WALKSTYLES then
+    CreateThread(function()
+        for _, info in ipairs(CONFIG.WALKSTYLES) do
+            if info.COMMAND and info.COMMAND ~= "" then
+                RegisterCommand(info.COMMAND, function()
+                    TriggerEvent("outsider_radial_menu:Client:setAnim", info.STYLE or "noanim")
+                end, false)
+            end
+        end
+    end)
+end
+
+RegisterNetEvent("outsider_radial_menu:Server:setwalk", function(walk)
+    local animation = walk
+    local player = PlayerPedId()
+    if animation == "noanim" then
+        Citizen.InvokeNative(0xA6F67BEC53379A32, PlayerPedId(), "MP_Style_Casual") 
+        return
+    end
+    Citizen.InvokeNative(0xCB9401F918CB0F75, player, animation, 1, -1)
+end)
+
+local old = nil
+AddEventHandler("outsider_radial_menu:Client:setAnim", function(animation)
+    if old then
+        Citizen.InvokeNative(0xA6F67BEC53379A32, PlayerPedId(), old)
+    end
+    Citizen.InvokeNative(0xCB9401F918CB0F75, PlayerPedId(), animation, 1, -1)
+    old = animation
+    TriggerServerEvent("outsider_radial_menu:setwalk", animation)
+end)
 
 local function loadAnimDict(dict)
     if not DoesAnimDictExist(dict) then

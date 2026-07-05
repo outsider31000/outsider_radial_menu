@@ -64,6 +64,21 @@ CONFIG.EMOTES = {
     { COMMAND = "dcheerful",    EMOTE = "KIT_EMOTE_REACTION_SHUFFLE_1" },
 }
 
+CONFIG.WALKSTYLES = {
+    { COMMAND = "walkcasual",       STYLE = "MP_Style_Casual" },
+    { COMMAND = "walkcrazy",        STYLE = "MP_Style_Crazy" },
+    { COMMAND = "walkdrunk",        STYLE = "MP_Style_drunk" },
+    { COMMAND = "walkeasy",         STYLE = "MP_Style_EasyRider" },
+    { COMMAND = "walkflamboyant",   STYLE = "MP_Style_Flamboyant" },
+    { COMMAND = "walkgreenhorn",    STYLE = "MP_Style_Greenhorn" },
+    { COMMAND = "walkgunslinger",   STYLE = "MP_Style_Gunslinger" },
+    { COMMAND = "walkinquisitive",  STYLE = "MP_Style_inquisitive" },
+    { COMMAND = "walkrefined",      STYLE = "MP_Style_Refined" },
+    { COMMAND = "walksilentType",   STYLE = "MP_Style_SilentType" },
+    { COMMAND = "walkveteran",      STYLE = "MP_Style_Veteran" },
+    { COMMAND = "walkdefault",      STYLE = "noanim" },
+}
+
 -- PUT FALSE IF YOU DONT WANT TO USE KEYBIND
 -- menu can be closed by pressing F6 or Escape or use the buttons
 CONFIG.KEY_OPEN_MENU = 0x3C0A40F2 -- F6
@@ -131,6 +146,7 @@ CONFIG.MENU = {
                     ["rc"]           = { image = "reload.png" },
                     ["clothingmenu"] = { image = "cloths.png", isSubMenu = true },
                     ["animations"]   = { image = "emote.png", isSubMenu = true },
+                    ["walkanimations"] = { image = "walkstyle.png", isSubMenu = true },
                 },
             },
         },
@@ -216,6 +232,33 @@ CONFIG.MENU = {
                             ["boots"]       = { image = "boots.png", isCommand = true, close = false },
                             ["spurs"]       = { image = "spurs.png", isCommand = true, close = false },
                             ["spats"]       = { image = "spats.png", isCommand = true, close = false },
+                        },
+                    },
+                },
+            },
+        },
+        ['walkanimations'] = {
+            data = {
+                lastmenu = "mainmenu",
+                style = STYLES.THIN,
+                wheels = {
+                    {
+                        navAngle = 270,
+                        minRadiusPercent = 0.25,
+                        maxRadiusPercent = 0.65,
+                        actions = {
+                            ["walkcasual"]      = { image = "casual.png", isCommand = true, close = true },
+                            ["walkcrazy"]       = { image = "crazy.png", isCommand = true, close = true },
+                            ["walkdrunk"]       = { image = "drunkw.png", isCommand = true, close = true },
+                            ["walkeasy"]        = { image = "erider.png", isCommand = true, close = true },
+                            ["walkflamboyant"]  = { image = "flam.png", isCommand = true, close = true },
+                            ["walkgreenhorn"]   = { image = "horn.png", isCommand = true, close = true },
+                            ["walkgunslinger"]  = { image = "gslinger.png", isCommand = true, close = true },
+                            ["walkinquisitive"] = { image = "inquisitive.png", isCommand = true, close = true },
+                            ["walkrefined"]     = { image = "refined.png", isCommand = true, close = true },
+                            ["walksilentType"]  = { image = "stype.png", isCommand = true, close = true },
+                            ["walkveteran"]     = { image = "veteran.png", isCommand = true, close = true },
+                            ["walkdefault"]     = { image = "default.png", isCommand = true, close = true },
                         },
                     },
                 },

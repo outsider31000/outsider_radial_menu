@@ -8,6 +8,8 @@ shared_script '@vorp_lib/import.lua'
 
 client_script "client/main.lua"
 
+server_script 'server/server.lua'
+
 ui_page "web/index.html"
 
 files {
