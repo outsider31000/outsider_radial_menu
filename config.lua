@@ -8,6 +8,13 @@ CONFIG.OPEN_MENU = function()
     if isDead then
         return false
     end
+    
+    -- dont let cuffed or lassoed people to use it?
+    local isCUffed = IsPedCuffed(PlayerPedId()) == 1
+    local isLassoed = IsPedLassoed(PlayerPedId()) == 1
+    if isCUffed or isLassoed then
+        return false
+    end
 
     return true
 end
